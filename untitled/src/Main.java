@@ -113,7 +113,7 @@ public class Main {
     // 파일 삭제
     public static void DeleteFile(int number, Proverbs[] proverbs) {
         try{
-            File file = new File("./db/wiseSaying"+ number + ".json");
+            File file = new File("./db/wiseSaying/"+ number + ".json");
             if(file.exists()){
                 file.delete();
             }
