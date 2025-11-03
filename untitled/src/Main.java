@@ -6,7 +6,8 @@ public class Main {
     public static final int MAXSIZE = 100;
     public static void main(String[] args) {
 
-        System.out.println("last id : " + GetLastId());
+        //DEBUG
+        //System.out.println("last id : " + GetLastId());
         int number = GetLastId() + 1;
         Proverbs[] proverbs = new Proverbs[MAXSIZE]; // MAXSIZE = 100
         GetProverbs(proverbs,number);
@@ -100,7 +101,7 @@ public class Main {
             }
             outputString.append(']');
             //DEBUG
-            System.out.println("빌드 String: " + outputString);
+            //System.out.println("빌드 String: " + outputString);
             output.write(outputString.toString().getBytes());
             output.close();
         } catch (Exception e) {
@@ -131,7 +132,7 @@ public class Main {
             String outputString = "{\n\t\"id\" : " + number + ",\n\t\"proverb\":\""+proverb+"\",\n\t\"author\":\""+author+"\"\n}";
 
             //DEBUG
-            System.out.println("저장하는 String: " + outputString);
+            //System.out.println("저장하는 String: " + outputString);
 
             output.write(outputString.getBytes());
             output.close();
@@ -183,7 +184,7 @@ public class Main {
                 File file = new File(fileName);
                 if(file.exists()){
                     //DEBUG
-                    System.out.println("파일을 찾음, 파일주소 :" + fileName );
+                    //System.out.println("파일을 찾음, 파일주소 :" + fileName );
                     proverbs[i-1] = readJsonFile(fileName);
                 }
             }
@@ -203,7 +204,7 @@ public class Main {
             String json = sb.toString();
 
             //DEBUG
-            System.out.println("읽은 json 파일" + json);
+            //System.out.println("읽은 json 파일" + json);
 
             return parseProverbs(json);
 
@@ -229,7 +230,7 @@ public class Main {
         p.setAuthor(authorStr);
 
         //DEBUG
-        System.out.println(p.getNumber() + " " + p.getProverb() + " " + p.getAuthor() + " ");
+        //System.out.println(p.getNumber() + " " + p.getProverb() + " " + p.getAuthor() + " ");
         return p;
     }
 }
